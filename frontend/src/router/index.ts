@@ -7,6 +7,11 @@ const routes:RouteRecordRaw[] = [
     name:'home',
     component:Home,
   },
+  // {
+  //   path:'/createRoom',
+  //   name:'createRoom',
+  //   component:
+  // }
 ];
 
 const router = createRouter({

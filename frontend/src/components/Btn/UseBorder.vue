@@ -7,12 +7,11 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-const UseBorder = defineComponent({
-  name: "UseBorder",
+export default defineComponent({
   components: {},
   setup(props) { },
 });
-export default UseBorder;
+
 </script>
 
 <style lang="scss" scoped>
@@ -44,11 +43,11 @@ $border-width: 3px;
     }
 
     &::before {
-      left: -$border-width / 2;
+      left: -$border-width * 0.5;
     }
 
     &::after {
-      right: -$border-width / 2;
+      right: -$border-width * 0.5;
     }
   }
 }
