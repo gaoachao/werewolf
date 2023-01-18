@@ -3,7 +3,10 @@
     <img :src="`/assets/werewolf${theme}.svg`" alt="logo" class="logo" />
     <div class="title">狼人杀</div>
     <Btn content="加入房间"></Btn>
-    <Btn content="创建房间"></Btn>
+    <Btn 
+      content="创建房间"
+      @click="$router.push('createRoom')"
+    ></Btn>
     <Btn content="游戏记录"></Btn>
   </div>
 </template>
@@ -19,7 +22,6 @@ export default defineComponent({
     return { theme };
   }
 })
-// export default Home;
 </script>
 
 <style lang="scss" scoped>

@@ -11,7 +11,7 @@ export type Character = SetableCharacters | "SHERIFF";
 // | "HOST"
 // | "";
 
-const ChineseNames: Record<Character, string> = {
+export const ChineseNames: Record<Character, string> = {
   HUNTER: "猎人",
   GUARD: "守卫",
   SEER: "预言家",
@@ -22,5 +22,3 @@ const ChineseNames: Record<Character, string> = {
   // HOST: "主持人",
   // "": "",
 };
-
-

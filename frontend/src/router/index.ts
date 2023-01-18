@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Home from "../pages/Home.vue";
+import CreateRoom from "../pages/CreateRoom.vue";
 
 const routes:RouteRecordRaw[] = [
   {
@@ -7,11 +8,11 @@ const routes:RouteRecordRaw[] = [
     name:'home',
     component:Home,
   },
-  // {
-  //   path:'/createRoom',
-  //   name:'createRoom',
-  //   component:
-  // }
+  {
+    path:'/createRoom',
+    name:'createRoom',
+    component:CreateRoom,
+  }
 ];
 
 const router = createRouter({

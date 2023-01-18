@@ -9,3 +9,49 @@
   --on-bg: #111;
   --secondary: #eee;
 }
+
+
+input {
+  border: none;
+}
+//消除选中input输入框之后的边框效果（你的昵称和房间密码）
+input:focus {
+  outline: none;
+}
+
+
+// * {
+//   color: var(--on-bg);
+//   background-color: var(--bg);
+//   transition: color 0.2s, background-color 0.2s;
+//   user-select: none;
+// }
+
+// .main {
+//   min-height: 100vh;
+//   background-color: var(--bg);
+// }
+
+
+
+// *::-webkit-scrollbar {
+//   width: 0px;
+//   height: 0px;
+// }
+
+// *::-webkit-scrollbar-track {
+//   background: var(--bg);
+// }
+
+// *::-webkit-scrollbar-thumb {
+//   background-color: var(--bg);
+//   border-radius: 20px;
+//   border: 0px solid var(--on-bg);
+// }
+// * {
+//   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+// }
+
+// .spacer {
+//   flex: 1;
+// }
