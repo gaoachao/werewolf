@@ -1,5 +1,7 @@
 import { reactive, ref } from "vue";
 import { SetableCharacters } from "../../shared/GameDefs";
+import { showDialog } from "./dialog";
+import { needingCharacters } from "./game";
 
 /* 游戏人数配置（reactive） */
 export const characters = reactive<Record<SetableCharacters,number>>({
@@ -35,10 +37,21 @@ export function setCharacter(
 
 
 /**
- * 创建房间 函数
+ * 创建房间函数
  * @return {void}
  */
 
 export async function create(){
-
+  //如果昵称为空
+  if(!nickname.value) return showDialog("请填写昵称");
+  let characterNames:SetableCharacters[] = [];
+  Object.keys(characters).map((_name)=>{
+    const name = _name as SetableCharacters;
+    characterNames = characterNames.concat(
+      new Array(characters[name]).fill(name)
+    )
+  })
+  needingCharacters.value = characterNames;
+  
+  
 }

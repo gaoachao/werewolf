@@ -20,17 +20,17 @@ input:focus {
 }
 
 
-// * {
-//   color: var(--on-bg);
-//   background-color: var(--bg);
-//   transition: color 0.2s, background-color 0.2s;
-//   user-select: none;
-// }
+* {
+  color: var(--on-bg);
+  background-color: var(--bg);
+  // transition: color 0.2s, background-color 0.2s;
+  // user-select: none;
+}
 
-// .main {
-//   min-height: 100vh;
-//   background-color: var(--bg);
-// }
+.main {
+  min-height: 100vh;
+  background-color: var(--bg);
+}
 
 
 

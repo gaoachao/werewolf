@@ -28,6 +28,7 @@
     </div>
     <outline-btn
       content="确认创建"
+      @click="create"
     />
   </div>
 </template>
@@ -39,10 +40,12 @@ import OutlineBtn from "../components/Btn/Btn.vue"
 import UseBorder from "../components/Btn/UseBorder.vue";
 import RoomCharacterTile from '../components/RoomCharacter/RoomCharacterTile.vue';
 
+
 import {
   characters,
   nickname,
   password,
+  create,
 } from "../reactivity/createRoom";
 
 
@@ -60,6 +63,7 @@ export default defineComponent({
       characters,
       nickname,
       password,
+      create,
     }
   }
 })
