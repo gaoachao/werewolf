@@ -24,3 +24,7 @@ const ChineseNames: Record<Character, string> = {
 };
 
 console.log(Date.now());
+
+
+
+

@@ -3,6 +3,8 @@ import { SetableCharacters } from "../../shared/GameDefs";
 import { showDialog } from "./dialog";
 import { needingCharacters } from "./game";
 
+import { createRoom } from "../http/room";
+
 /* 游戏人数配置（reactive） */
 export const characters = reactive<Record<SetableCharacters,number>>({
   GUARD:1,     //守卫
@@ -53,5 +55,11 @@ export async function create(){
   })
   needingCharacters.value = characterNames;
   
-  
+  const res = await createRoom({
+    characters:characterNames,
+    name:nickname.value,
+    password:password.value?password.value : undefined,
+  });
+
+  console.log(res);
 }

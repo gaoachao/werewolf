@@ -2,6 +2,7 @@ import axios,{AxiosHeaders, AxiosRequestConfig} from "axios";
 import { IDHeaderName, RoomNumberHeaderName, SERVER_BASE_URL} from "../../shared/constants";
 import { getToken } from "../utils/token";
 import { showDialog } from "../reactivity/dialog";
+import { HttpRes } from "../../shared/httpMsg/httpResTemplate";
 
 export default function request(
   config:AxiosRequestConfig
@@ -19,8 +20,13 @@ export default function request(
     (config)=>{
       const token = getToken();
       if(config.headers){
-        (config.headers as AxiosHeaders).set(IDHeaderName,token?.ID);
-        (config.headers as AxiosHeaders).set(RoomNumberHeaderName,token?.roomNumber);
+        if(token){
+          (config.headers as AxiosHeaders).set(IDHeaderName,token!.ID);
+          (config.headers as AxiosHeaders).set(RoomNumberHeaderName,token!.roomNumber);
+        } else {
+          (config.headers as AxiosHeaders).set(IDHeaderName,token);
+          (config.headers as AxiosHeaders).set(RoomNumberHeaderName,token);
+        }
       }
       return config;
     },
@@ -47,5 +53,8 @@ export default function request(
   );
 
   // 返回一个 Promise对象
-  return new Promise();
+  return new Promise<HttpRes>(async (resolve) =>{
+    const res:HttpRes = await instance(config);
+    resolve(res);
+  });
 }
