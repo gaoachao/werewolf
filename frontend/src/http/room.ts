@@ -12,5 +12,6 @@ export async function createRoom(
     method:"POST",
     data,
   });
+  // console.log(res);
   return res as CreateRoomResponse;
 }

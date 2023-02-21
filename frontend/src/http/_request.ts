@@ -9,9 +9,10 @@ export default function request(
 ){
   // 用axios.create()实例化
   const instance = axios.create({
+    // 对服务端3011端口发起请求
     baseURL:SERVER_BASE_URL,
     timeout:60000,
-    //跨域情况下，需要携带请求域下的cookie那么就需要配置xhr对象的withCredentials为true。
+    // 跨域情况下，需要携带请求域下的cookie那么就需要配置xhr对象的withCredentials为true。
     withCredentials:true,
   });
 

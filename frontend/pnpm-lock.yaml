@@ -3,9 +3,11 @@ lockfileVersion: 5.4
 specifiers:
   '@types/axios': ^0.14.0
   '@types/node': ^18.11.18
+  '@types/socket.io-client': ^3.0.0
   '@vitejs/plugin-vue': ^4.0.0
   axios: ^1.2.2
   sass: ^1.57.1
+  socket.io-client: ^4.6.0
   typescript: ^4.9.3
   vite: ^4.0.0
   vue: ^3.2.45
@@ -14,12 +16,14 @@ specifiers:
 
 dependencies:
   axios: registry.npmmirror.com/axios/1.2.2
+  socket.io-client: registry.npmmirror.com/socket.io-client/4.6.0
   vue: registry.npmmirror.com/vue/3.2.45
   vue-router: registry.npmmirror.com/vue-router/4.1.6_vue@3.2.45
 
 devDependencies:
   '@types/axios': registry.npmmirror.com/@types/axios/0.14.0
   '@types/node': registry.npmmirror.com/@types/node/18.11.18
+  '@types/socket.io-client': registry.npmmirror.com/@types/socket.io-client/3.0.0
   '@vitejs/plugin-vue': registry.npmmirror.com/@vitejs/plugin-vue/4.0.0_vite@4.0.4+vue@3.2.45
   sass: registry.npmmirror.com/sass/1.57.1
   typescript: registry.npmmirror.com/typescript/4.9.4
@@ -301,6 +305,11 @@ packages:
     dev: true
     optional: true
 
+  registry.npmmirror.com/@socket.io/component-emitter/3.1.0:
+    resolution: {integrity: sha512-+9jVqKhRSpsc591z5vX+X5Yyw+he/HCB4iQ/RYxw35CEPaY1gnsNE43nf9n9AaYjAQrTiI/mOwKUKdUs9vf7Xg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@socket.io/component-emitter/-/component-emitter-3.1.0.tgz}
+    name: '@socket.io/component-emitter'
+    version: 3.1.0
+
   registry.npmmirror.com/@types/axios/0.14.0:
     resolution: {integrity: sha512-KqQnQbdYE54D7oa/UmYVMZKq7CO4l8DEENzOKc4aBRwxCXSlJXGz83flFx5L7AWrOQnmuN3kVsRdt+GZPPjiVQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/axios/-/axios-0.14.0.tgz}
     name: '@types/axios'
@@ -316,6 +325,19 @@ packages:
     resolution: {integrity: sha512-DHQpWGjyQKSHj3ebjFI/wRKcqQcdR+MoFBygntYOZytCqNfkd2ZC4ARDJ2DQqhjH5p85Nnd3jhUJIXrszFX/JA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/node/-/node-18.11.18.tgz}
     name: '@types/node'
     version: 18.11.18
+    dev: true
+
+  registry.npmmirror.com/@types/socket.io-client/3.0.0:
+    resolution: {integrity: sha512-s+IPvFoEIjKA3RdJz/Z2dGR4gLgysKi8owcnrVwNjgvc01Lk68LJDDsG2GRqegFITcxmvCMYM7bhMpwEMlHmDg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/socket.io-client/-/socket.io-client-3.0.0.tgz}
+    name: '@types/socket.io-client'
+    version: 3.0.0
+    deprecated: This is a stub types definition. socket.io-client provides its own type definitions, so you do not need this installed.
+    dependencies:
+      socket.io-client: registry.npmmirror.com/socket.io-client/4.6.0
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
     dev: true
 
   registry.npmmirror.com/@vitejs/plugin-vue/4.0.0_vite@4.0.4+vue@3.2.45:
@@ -573,11 +595,45 @@ packages:
     version: 1.0.2
     dev: true
 
+  registry.npmmirror.com/debug/4.3.4:
+    resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/debug/-/debug-4.3.4.tgz}
+    name: debug
+    version: 4.3.4
+    engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+    dependencies:
+      ms: registry.npmmirror.com/ms/2.1.2
+
   registry.npmmirror.com/delayed-stream/1.0.0:
     resolution: {integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/delayed-stream/-/delayed-stream-1.0.0.tgz}
     name: delayed-stream
     version: 1.0.0
     engines: {node: '>=0.4.0'}
+
+  registry.npmmirror.com/engine.io-client/6.4.0:
+    resolution: {integrity: sha512-GyKPDyoEha+XZ7iEqam49vz6auPnNJ9ZBfy89f+rMMas8AuiMWOZ9PVzu8xb9ZC6rafUqiGHSCfu22ih66E+1g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/engine.io-client/-/engine.io-client-6.4.0.tgz}
+    name: engine.io-client
+    version: 6.4.0
+    dependencies:
+      '@socket.io/component-emitter': registry.npmmirror.com/@socket.io/component-emitter/3.1.0
+      debug: registry.npmmirror.com/debug/4.3.4
+      engine.io-parser: registry.npmmirror.com/engine.io-parser/5.0.6
+      ws: registry.npmmirror.com/ws/8.11.0
+      xmlhttprequest-ssl: registry.npmmirror.com/xmlhttprequest-ssl/2.0.0
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+
+  registry.npmmirror.com/engine.io-parser/5.0.6:
+    resolution: {integrity: sha512-tjuoZDMAdEhVnSFleYPCtdL2GXwVTGtNjoeJd9IhIG3C1xs9uwxqRNEu5WpnDZCaozwVlK/nuQhpodhXSIMaxw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/engine.io-parser/-/engine.io-parser-5.0.6.tgz}
+    name: engine.io-parser
+    version: 5.0.6
+    engines: {node: '>=10.0.0'}
 
   registry.npmmirror.com/esbuild/0.16.16:
     resolution: {integrity: sha512-24JyKq10KXM5EBIgPotYIJ2fInNWVVqflv3gicIyQqfmUqi4HvDW1VR790cBgLJHCl96Syy7lhoz7tLFcmuRmg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/esbuild/-/esbuild-0.16.16.tgz}
@@ -763,6 +819,11 @@ packages:
       brace-expansion: registry.npmmirror.com/brace-expansion/2.0.1
     dev: true
 
+  registry.npmmirror.com/ms/2.1.2:
+    resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ms/-/ms-2.1.2.tgz}
+    name: ms
+    version: 2.1.2
+
   registry.npmmirror.com/muggle-string/0.1.0:
     resolution: {integrity: sha512-Tr1knR3d2mKvvWthlk7202rywKbiOm4rVFLsfAaSIhJ6dt9o47W4S+JMtWhd/PW9Wrdew2/S2fSvhz3E2gkfEg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/muggle-string/-/muggle-string-0.1.0.tgz}
     name: muggle-string
@@ -857,6 +918,32 @@ packages:
       immutable: registry.npmmirror.com/immutable/4.2.2
       source-map-js: registry.npmmirror.com/source-map-js/1.0.2
     dev: true
+
+  registry.npmmirror.com/socket.io-client/4.6.0:
+    resolution: {integrity: sha512-2XOp18xnGghUICSd5ziUIS4rB0dhr6S8OvAps8y+HhOjFQlqGcf+FIh6fCIsKKZyWFxJeFPrZRNPGsHDTsz1Ug==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/socket.io-client/-/socket.io-client-4.6.0.tgz}
+    name: socket.io-client
+    version: 4.6.0
+    engines: {node: '>=10.0.0'}
+    dependencies:
+      '@socket.io/component-emitter': registry.npmmirror.com/@socket.io/component-emitter/3.1.0
+      debug: registry.npmmirror.com/debug/4.3.4
+      engine.io-client: registry.npmmirror.com/engine.io-client/6.4.0
+      socket.io-parser: registry.npmmirror.com/socket.io-parser/4.2.2
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+
+  registry.npmmirror.com/socket.io-parser/4.2.2:
+    resolution: {integrity: sha512-DJtziuKypFkMMHCm2uIshOYC7QaylbtzQwiMYDuCKy3OPkjLzu4B2vAhTlqipRHHzrI0NJeBAizTK7X+6m1jVw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/socket.io-parser/-/socket.io-parser-4.2.2.tgz}
+    name: socket.io-parser
+    version: 4.2.2
+    engines: {node: '>=10.0.0'}
+    dependencies:
+      '@socket.io/component-emitter': registry.npmmirror.com/@socket.io/component-emitter/3.1.0
+      debug: registry.npmmirror.com/debug/4.3.4
+    transitivePeerDependencies:
+      - supports-color
 
   registry.npmmirror.com/source-map-js/1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/source-map-js/-/source-map-js-1.0.2.tgz}
@@ -989,3 +1076,23 @@ packages:
       '@vue/runtime-dom': registry.npmmirror.com/@vue/runtime-dom/3.2.45
       '@vue/server-renderer': registry.npmmirror.com/@vue/server-renderer/3.2.45_vue@3.2.45
       '@vue/shared': registry.npmmirror.com/@vue/shared/3.2.45
+
+  registry.npmmirror.com/ws/8.11.0:
+    resolution: {integrity: sha512-HPG3wQd9sNQoT9xHyNCXoDUa+Xw/VevmY9FoHyQ+g+rrMn4j6FB4np7Z0OhdTgjx6MgQLK7jwSy1YecU1+4Asg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ws/-/ws-8.11.0.tgz}
+    name: ws
+    version: 8.11.0
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: ^5.0.2
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
+
+  registry.npmmirror.com/xmlhttprequest-ssl/2.0.0:
+    resolution: {integrity: sha512-QKxVRxiRACQcVuQEYFsI1hhkrMlrXHPegbbd1yn9UHOmRxY+si12nQYzri3vbzt8VdTTRviqcKxcyllFas5z2A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/xmlhttprequest-ssl/-/xmlhttprequest-ssl-2.0.0.tgz}
+    name: xmlhttprequest-ssl
+    version: 2.0.0
+    engines: {node: '>=0.4.0'}

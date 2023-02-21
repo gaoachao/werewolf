@@ -3,6 +3,8 @@ import { SetableCharacters } from "../../shared/GameDefs";
 import { showDialog } from "./dialog";
 import { needingCharacters } from "./game";
 
+
+import { joinRoom } from "../socket.io";
 import { createRoom } from "../http/room";
 
 /* 游戏人数配置（reactive） */
@@ -60,6 +62,14 @@ export async function create(){
     name:nickname.value,
     password:password.value?password.value : undefined,
   });
-
-  console.log(res);
+  // console.log(res);
+  if(res && res.status === 200){
+    const data = res.data;
+    // 通知后端在io中加入该房间
+    // joinRoom(data.roomNumber)
+    console.log(data);
+    joinRoom(data.roomNumber);
+    
+    showDialog("创建成功, 进入等待房间");
+  }
 }
