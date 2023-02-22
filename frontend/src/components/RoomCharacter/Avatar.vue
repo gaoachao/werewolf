@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
-import { ChineseNames, Character } from '../../../shared/GameDefs';
+import { ChineseNames, Character } from '../../../../shared/GameDefs';
 import { theme } from '../../reactivity/theme';
 
 export default defineComponent({

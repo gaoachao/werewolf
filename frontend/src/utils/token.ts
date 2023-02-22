@@ -1,4 +1,4 @@
-import { TokenDef } from "../../shared/ModelDefs";
+import { TokenDef } from "../../../shared/ModelDefs";
 
 // 设置Token的KEY
 const KEY = "_werewolf_token";

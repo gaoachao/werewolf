@@ -1,9 +1,9 @@
 import { reactive, ref } from "vue";
-import { SetableCharacters } from "../../shared/GameDefs";
+import { SetableCharacters } from "../../../shared/GameDefs";
 import { showDialog } from "./dialog";
-import { needingCharacters } from "./game";
-
-
+import { needingCharacters , players } from "./game";
+import router from "../router";
+import { setToken } from "../utils/token";
 import { joinRoom } from "../socket.io";
 import { createRoom } from "../http/room";
 
@@ -62,14 +62,32 @@ export async function create(){
     name:nickname.value,
     password:password.value?password.value : undefined,
   });
-  // console.log(res);
   if(res && res.status === 200){
     const data = res.data;
     // 通知后端在io中加入该房间
-    // joinRoom(data.roomNumber)
     console.log(data);
     joinRoom(data.roomNumber);
     
     showDialog("创建成功, 进入等待房间");
+    router.push({
+      name: "waitRoom",
+      query: {
+        pw: password.value,
+        number: data.roomNumber,
+      },
+    });
+    // 把用户的ID和创建的房间号放入token中
+    setToken(data.ID, data.roomNumber);
+    players.value = [
+      {
+        index: 1,
+        isAlive: true,
+        name: nickname.value,
+        isSheriff: false,
+        isDying: false,
+        hasVotedAt: [],
+        sheriffVotes: [],
+      },
+    ];
   }
 }

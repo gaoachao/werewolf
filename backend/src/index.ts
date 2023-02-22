@@ -4,10 +4,10 @@ import cors from "@koa/cors";
 import { createServer } from "http";
 import router from "./router";
 
-import { WS_PATH } from "../../frontend/shared/constants";
+import { WS_PATH } from "../../shared/config";
 
 import { Server } from "socket.io";
-import { setup } from "./ws";
+import { setup } from "./websocket";
 
 const app = new Koa<
   { isKnownError: Boolean },

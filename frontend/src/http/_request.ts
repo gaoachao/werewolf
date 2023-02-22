@@ -1,8 +1,8 @@
 import axios,{AxiosHeaders, AxiosRequestConfig} from "axios";
-import { IDHeaderName, RoomNumberHeaderName, SERVER_BASE_URL} from "../../shared/constants";
+import { IDHeaderName, RoomNumberHeaderName, SERVER_BASE_URL} from "../../../shared/config";
 import { getToken } from "../utils/token";
 import { showDialog } from "../reactivity/dialog";
-import { HttpRes } from "../../shared/httpMsg/httpResTemplate";
+import { HttpRes } from "../../../shared/httpMsg/httpResTemplate";
 
 export default function request(
   config:AxiosRequestConfig
@@ -44,7 +44,7 @@ export default function request(
         if (data.msg) {
           showDialog(data.msg);
         } else {
-          console.error("#error:", { response });
+          console.error("error:", { response });
           showDialog("发生未知错误");
         }
         return null;

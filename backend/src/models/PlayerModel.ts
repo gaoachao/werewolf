@@ -1,7 +1,7 @@
-import { Character } from "../../../frontend/shared/GameDefs";
+import { Character } from "../../../shared/GameDefs";
 import {  
   CharacterStatus,index,day,ID,PlayerDef,PublicPlayerDef
-} from "../../../frontend/shared/ModelDefs";
+} from "../../../shared/ModelDefs";
 import { Room } from "./RoomModel";
 
 type playerInput = { name: string; index: number }
@@ -42,6 +42,7 @@ export class Player implements PlayerDef{
       // sustring(2)意味着从第三位也就是0.后面的数字
   }
 
+  // 公开的玩家信息
   getPublic(room: Room): PublicPlayerDef {
     return {
       index: this.index,

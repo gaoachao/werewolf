@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Home from "../pages/Home.vue";
 import CreateRoom from "../pages/CreateRoom.vue";
+import WaitRoom from "../pages/WaitRoom.vue";
 
 const routes:RouteRecordRaw[] = [
   {
@@ -12,6 +13,11 @@ const routes:RouteRecordRaw[] = [
     path:'/createRoom',
     name:'createRoom',
     component:CreateRoom,
+  },
+  {
+    path:'/waitRoom',
+    name:'waitRoom',
+    component:WaitRoom,
   }
 ];
 

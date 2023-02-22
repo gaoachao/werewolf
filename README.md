@@ -7,15 +7,22 @@ export const CLIENT_BASE_URL = "http://localhost:5173";
 export const SERVER_BASE_URL = "http://localhost:3011";
 ```
 
-## cor使用说明
+## 关于cor解决跨域
 
 
 
 ## 有关socket.io
 
+## 有关token
 
+`createRoom.ts`中房主创建房间之后把房主的ID和房间号放入token中
 
+然后`initRoom`向后端发送post请求时把token中的id和roomNumber放入`request header`中，在用`axios`封装的请求拦截器中。
 
+## 后端RoomModel
+
+- `class Room`会有一个静态私有属性`private static roomMap`存放着各个房间。
+- 
 
 ## Koa中router.allowedMethods()中间件的作用
 

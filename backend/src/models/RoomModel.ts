@@ -1,7 +1,7 @@
 import {
   Character,
   GameStatus,
-} from "../../../frontend/shared/GameDefs";
+} from "../../../shared/GameDefs";
 import {
   day,
   ID,
@@ -9,7 +9,7 @@ import {
   PlayerDef,
   PublicPlayerDef,
   RoomDef,
-} from "../../../frontend/shared/ModelDefs";
+} from "../../../shared/ModelDefs";
 import { Player } from "./PlayerModel";
 import { createError } from "../middleware/handleError";
 
@@ -29,7 +29,7 @@ export class Room implements RoomDef{
   gameStatus: GameStatus[] = [GameStatus.WOLF_KILL];
   toFinishPlayers = new Set<index>();
   timer: NodeJS.Timeout;
-  // 自动清除的定时器
+  // 自动清除的定时器，用来清除Room.roomMap里的房间号
   clearSelfTimer: NodeJS.Timeout;
   // 死亡结算后的下一个状态
   nextStateOfDieCheck: GameStatus;
@@ -69,6 +69,7 @@ export class Room implements RoomDef{
       } else {
         this.roomNumber = roomNumber;
         Room.roomMap[this,roomNumber] = this;
+        console.log(Room.roomMap);
         break;
       }
     }
@@ -89,10 +90,6 @@ export class Room implements RoomDef{
     );
   }
 
-  // playerJoin(name:string,password?:string):Player {
-    
-  // }
-
   // 静态方法，清除特定的房间
   static clearRoom(number: string): void {
     delete this.roomMap[number];
@@ -104,6 +101,16 @@ export class Room implements RoomDef{
       return createError({ status: 400, msg: "未找到房间号" });
     }
     return room;
+  }
+
+    // playerJoin(name:string,password?:string):Player {
+    
+  // }
+
+  choosePublicInfo():PublicPlayerDef[]{
+    return this.players
+        .map((p) => p.getPublic(this))
+        .sort((a,b) => a.index - b.index)
   }
 }
 

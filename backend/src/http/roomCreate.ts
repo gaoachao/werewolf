@@ -2,7 +2,7 @@ import { Middleware } from "koa";
 
 import {
   CreateRoomRequest,CreateRoomResponse
-} from "../../../frontend/shared/httpMsg/CreateRoomMsg";
+} from "../../../shared/httpMsg/CreateRoomMsg";
 import { Player } from "../models/PlayerModel";
 import { Room } from "../models/RoomModel";
 

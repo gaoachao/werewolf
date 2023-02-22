@@ -1,4 +1,4 @@
-import { RoomJoinMsg } from "../../shared/WSMsg/RoomJoin";
+import { RoomJoinMsg } from "../../../shared/wsMsg/RoomJoin";
 
 import { players } from "../reactivity/game";
 

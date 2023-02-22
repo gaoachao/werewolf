@@ -1,6 +1,6 @@
 import  {io, Socket} from "socket.io-client";
-import { Events } from "../../shared/WSEvents";
-import { SERVER_DOMAIN, WS_PATH } from "../../shared/constants";
+import { Events } from "../../../shared/WSEvents";
+import { SERVER_DOMAIN, WS_PATH } from "../../../shared/config";
 
 import roomJoin from "./roomJoin";
 
@@ -20,7 +20,7 @@ function joinRoom(roomNumber: string) {
     console.log("#ws connected");
   });
 
-  
+
   socket.emit(Events.ROOM_JOIN, roomNumber);
 
 }

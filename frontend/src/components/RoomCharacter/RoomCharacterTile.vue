@@ -17,7 +17,7 @@ import {
 import {
   SetableCharacters,
   ChineseNames,
-} from "../../../shared/GameDefs";
+} from "../../../../shared/GameDefs";
 
 import {
   setCharacter,
