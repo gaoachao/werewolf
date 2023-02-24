@@ -2,7 +2,10 @@
   <div class="main-page">
     <img :src="`/assets/werewolf${theme}.svg`" alt="logo" class="logo" />
     <div class="title">狼人杀</div>
-    <Btn content="加入房间"></Btn>
+    <Btn 
+      content="加入房间"
+      @click="$router.push('joinRoom')"
+    ></Btn>
     <Btn 
       content="创建房间"
       @click="$router.push('createRoom')"
